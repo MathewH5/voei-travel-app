@@ -1,0 +1,150 @@
+.reservas-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.reservas-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.reservas-header p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #f3f4f6;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.tab--active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.estado-info {
+  padding: 1rem;
+  text-align: center;
+  color: #555;
+}
+
+.estado-info--erro {
+  color: #b91c1c;
+}
+
+.lista-reservas {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-reserva {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  align-items: center;
+}
+
+.card-reserva__imagem {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.card-reserva__conteudo {
+  flex: 1;
+}
+
+.card-reserva__titulo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-reserva__titulo-linha h2 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.card-reserva__local {
+  color: #6b7280;
+  margin: 0.25rem 0;
+}
+
+.card-reserva__datas,
+.card-reserva__detalhes {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0.15rem 0;
+}
+
+.card-reserva__lado-direito {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.card-reserva__preco {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.card-reserva__preco--apagado {
+  color: #9ca3af;
+}
+
+.card-reserva__acoes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--secundario {
+  background: #e5e7eb;
+}
+
+.btn--perigo {
+  background: #dc2626;
+  color: #fff;
+}
+
+.badge-status {
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
+.badge-status--verde {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-status--cinza {
+  background: #e5e7eb;
+  color: #374151;
+}

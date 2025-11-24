@@ -1,0 +1,59 @@
+<section class="voucher-container" *ngIf="!estaCarregando && !erroCarregamento">
+  <h1>Voucher da Reserva</h1>
+
+  <div class="voucher-card" *ngIf="reserva">
+    <div class="voucher-info">
+      <p class="voucher-destino">{{ reserva.destination }}</p>
+      <p class="voucher-pais">{{ reserva.country }}</p>
+
+      <p class="voucher-label">
+        Reserva nº
+        <span class="voucher-valor">{{ reserva.id }}</span>
+      </p>
+
+      <p class="voucher-label">
+        Data da viagem:
+        <span class="voucher-valor">
+          {{ reserva.startDate | date: 'dd/MM/yyyy' }} -
+          {{ reserva.endDate | date: 'dd/MM/yyyy' }}
+        </span>
+      </p>
+
+      <p class="voucher-label">
+        Duração:
+        <span class="voucher-valor">
+          {{ reserva.travelers }} viajante(s)
+        </span>
+      </p>
+
+      <p class="voucher-label">
+        Status:
+        <span class="voucher-valor status">{{ reserva.status }}</span>
+      </p>
+
+      <p class="voucher-label">
+        Valor total:
+        <span class="voucher-valor preco">
+          {{ reserva.totalPrice | currency: 'BRL' : 'symbol' : '1.0-0' }}
+        </span>
+      </p>
+    </div>
+
+    <div class="voucher-qr">
+      <div class="qr-placeholder">
+        QR
+      </div>
+      <p class="qr-texto">
+        Apresente este voucher (ou o QR code gerado) no momento do embarque.
+      </p>
+    </div>
+  </div>
+
+  <a routerLink="/minhas-reservas" class="btn-voltar">← Voltar para Minhas Reservas</a>
+</section>
+
+<div *ngIf="estaCarregando" class="estado-info">Carregando voucher...</div>
+
+<div *ngIf="erroCarregamento" class="estado-info estado-info--erro">
+  {{ erroCarregamento }}
+</div>

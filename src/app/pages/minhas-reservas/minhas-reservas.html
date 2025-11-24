@@ -1,0 +1,125 @@
+<section class="reservas-container">
+  <header class="reservas-header">
+    <h1>Minhas Reservas</h1>
+    <p>Gerencie todas as suas viagens</p>
+  </header>
+
+  <div class="tabs">
+    <button
+      class="tab"
+      [class.tab--active]="abaAtiva === 'proximas'"
+      (click)="trocarAba('proximas')"
+    >
+      Próximas Viagens ({{ reservasProximas.length }})
+    </button>
+
+    <button
+      class="tab"
+      [class.tab--active]="abaAtiva === 'anteriores'"
+      (click)="trocarAba('anteriores')"
+    >
+      Viagens Anteriores ({{ reservasAnteriores.length }})
+    </button>
+  </div>
+
+  <div *ngIf="estaCarregando" class="estado-info">
+    Carregando reservas...
+  </div>
+
+  <div *ngIf="erroCarregamento" class="estado-info estado-info--erro">
+    {{ erroCarregamento }}
+  </div>
+
+  <div class="lista-reservas" *ngIf="!estaCarregando && !erroCarregamento">
+    <!-- Próximas -->
+    <ng-container *ngIf="abaAtiva === 'proximas'; else abaAnteriores">
+      <div class="card-reserva" *ngFor="let reserva of reservasProximas">
+        <img
+          class="card-reserva__imagem"
+          [src]="reserva.imageUrl"
+          [alt]="reserva.destination"
+        />
+
+        <div class="card-reserva__conteudo">
+          <div class="card-reserva__titulo-linha">
+            <h2>{{ reserva.destination }}</h2>
+            <span class="badge-status badge-status--verde">
+              {{ reserva.status }}
+            </span>
+          </div>
+
+          <p class="card-reserva__local">{{ reserva.country }}</p>
+
+          <p class="card-reserva__datas">
+            {{ reserva.startDate | date: 'dd MMM yyyy' }} —
+            {{ reserva.endDate | date: 'dd MMM yyyy' }}
+          </p>
+
+          <p class="card-reserva__detalhes">
+            {{ reserva.travelers }} viajante(s)
+          </p>
+        </div>
+
+        <div class="card-reserva__lado-direito">
+          <p class="card-reserva__preco">
+            {{ reserva.totalPrice | currency: 'BRL' : 'symbol' : '1.0-0' }}
+          </p>
+
+          <div class="card-reserva__acoes">
+            <button class="btn btn--secundario" (click)="onVerVoucher(reserva)">
+              Ver Voucher
+            </button>
+            <button class="btn btn--perigo" (click)="onCancelarReserva(reserva)">
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p *ngIf="reservasProximas.length === 0" class="estado-info">
+        Você ainda não possui próximas viagens.
+      </p>
+    </ng-container>
+
+    <!-- Anteriores -->
+    <ng-template #abaAnteriores>
+      <div class="card-reserva" *ngFor="let reserva of reservasAnteriores">
+        <img
+          class="card-reserva__imagem"
+          [src]="reserva.imageUrl"
+          [alt]="reserva.destination"
+        />
+
+        <div class="card-reserva__conteudo">
+          <div class="card-reserva__titulo-linha">
+            <h2>{{ reserva.destination }}</h2>
+            <span class="badge-status badge-status--cinza">
+              {{ reserva.status }}
+            </span>
+          </div>
+
+          <p class="card-reserva__local">{{ reserva.country }}</p>
+
+          <p class="card-reserva__datas">
+            {{ reserva.startDate | date: 'dd MMM yyyy' }} —
+            {{ reserva.endDate | date: 'dd MMM yyyy' }}
+          </p>
+
+          <p class="card-reserva__detalhes">
+            {{ reserva.travelers }} viajante(s)
+          </p>
+        </div>
+
+        <div class="card-reserva__lado-direito">
+          <p class="card-reserva__preco card-reserva__preco--apagado">
+            {{ reserva.totalPrice | currency: 'BRL' : 'symbol' : '1.0-0' }}
+          </p>
+        </div>
+      </div>
+
+      <p *ngIf="reservasAnteriores.length === 0" class="estado-info">
+        Nenhuma viagem anterior encontrada.
+      </p>
+    </ng-template>
+  </div>
+</section>

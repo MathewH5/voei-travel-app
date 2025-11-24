@@ -1,0 +1,108 @@
+<section class="reserva-container">
+  <h1>Reservar viagem</h1>
+
+  <!-- Estado de carregamento / erro da viagem -->
+  <div *ngIf="estaCarregandoViagem" class="estado-info">
+    Carregando informações da viagem...
+  </div>
+
+  <div *ngIf="erroViagem" class="estado-info estado-info--erro">
+    {{ erroViagem }}
+  </div>
+
+  <div *ngIf="!estaCarregandoViagem && !erroViagem && viagem" class="layout">
+    <!-- Card da viagem -->
+    <div class="card-viagem">
+      <img
+        [src]="viagem.imagemUrl"
+        [alt]="viagem.titulo"
+        class="card-viagem__imagem"
+      />
+
+      <div class="card-viagem__conteudo">
+        <h2>{{ viagem.titulo }}</h2>
+        <p class="card-viagem__pais">{{ viagem.pais }}</p>
+        <p class="card-viagem__detalhe">
+          Duração aproximada: {{ viagem.duracaoDias }} dias
+        </p>
+        <p class="card-viagem__detalhe">
+          A partir de
+          <span class="preco">
+            {{ viagem.precoPorPessoa | currency: 'BRL' : 'symbol' : '1.0-0' }}
+          </span>
+          por pessoa
+        </p>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <form class="form-reserva" (ngSubmit)="onSubmit()" #form="ngForm">
+      <h3>Dados da reserva</h3>
+
+      <div class="campo">
+        <label for="dataInicio">Data de ida</label>
+        <input
+          id="dataInicio"
+          type="date"
+          name="dataInicio"
+          [(ngModel)]="dataInicio"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="dataFim">Data de volta</label>
+        <input
+          id="dataFim"
+          type="date"
+          name="dataFim"
+          [(ngModel)]="dataFim"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="viajantes">Número de viajantes</label>
+        <input
+          id="viajantes"
+          type="number"
+          name="viajantes"
+          min="1"
+          [(ngModel)]="viajantes"
+          required
+        />
+      </div>
+
+      <div class="resumo">
+        <p>
+          Valor por pessoa:
+          <strong>
+            {{ viagem.precoPorPessoa | currency: 'BRL' : 'symbol' : '1.0-0' }}
+          </strong>
+        </p>
+        <p>
+          Total:
+          <strong class="preco-total">
+            {{ precoTotal | currency: 'BRL' : 'symbol' : '1.0-0' }}
+          </strong>
+        </p>
+      </div>
+
+      <div *ngIf="erroReserva" class="estado-info estado-info--erro">
+        {{ erroReserva }}
+      </div>
+
+      <div *ngIf="mensagemSucesso" class="estado-info estado-info--sucesso">
+        {{ mensagemSucesso }}
+      </div>
+
+      <button class="btn-principal" type="submit" [disabled]="enviandoReserva">
+        {{ enviandoReserva ? 'Enviando...' : 'Confirmar reserva' }}
+      </button>
+
+      <a routerLink="/minhas-reservas" class="btn-link">
+        Cancelar e voltar
+      </a>
+    </form>
+  </div>
+</section>

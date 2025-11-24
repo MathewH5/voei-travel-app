@@ -1,0 +1,141 @@
+.reserva-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.reserva-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 2rem;
+}
+
+.card-viagem {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.card-viagem__imagem {
+  width: 180px;
+  height: 120px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.card-viagem__conteudo h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.card-viagem__pais {
+  margin: 0 0 0.5rem;
+  color: #6b7280;
+}
+
+.card-viagem__detalhe {
+  margin: 0.1rem 0;
+  color: #4b5563;
+}
+
+.preco {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Formulário */
+
+.form-reserva {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.form-reserva h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.campo input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.resumo {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: #f3f4f6;
+  font-size: 0.9rem;
+}
+
+.preco-total {
+  color: #2563eb;
+}
+
+.btn-principal {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+}
+
+.btn-principal:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.btn-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.estado-info {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.estado-info--erro {
+  color: #b91c1c;
+}
+
+.estado-info--sucesso {
+  color: #166534;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

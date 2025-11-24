@@ -1,1 +1,170 @@
-{}
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Matheos Hanna",
+      "email": "matheos@voei.com",
+      "senha": "123456",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "nome": "Admin Voei",
+      "email": "admin@voei.com",
+      "senha": "admin123",
+      "role": "admin"
+    }
+  ],
+  "viagens": [
+    {
+      "id": "1",
+      "titulo": "Ilhas Maldivas Paradise",
+      "pais": "Maldivas",
+      "cidade": "Malé",
+      "categoria": "Praia",
+      "descricao": "Resort sobre o mar cristalino, ideal para lua de mel e descanso.",
+      "imagemUrl": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      "precoPorPessoa": 8500,
+      "duracaoDias": 7,
+      "avaliacao": 4.9,
+      "tag": "Praia"
+    },
+    {
+      "id": "2",
+      "titulo": "Alpes Suíços Experience",
+      "pais": "Suíça",
+      "cidade": "Zermatt",
+      "categoria": "Montanha",
+      "descricao": "Neve, lareira e chocolate quente com vista para os Alpes.",
+      "imagemUrl": "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg",
+      "precoPorPessoa": 6200,
+      "duracaoDias": 6,
+      "avaliacao": 4.8,
+      "tag": "Montanha"
+    },
+    {
+      "id": "3",
+      "titulo": "Paris Romântica",
+      "pais": "França",
+      "cidade": "Paris",
+      "categoria": "Cidade",
+      "descricao": "Tour pelos principais pontos turísticos de Paris, com passeio pelo Sena.",
+      "imagemUrl": "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
+      "precoPorPessoa": 5400,
+      "duracaoDias": 7,
+      "avaliacao": 4.9,
+      "tag": "Cidade"
+    },
+    {
+      "id": "4",
+      "titulo": "Safari na África",
+      "pais": "Quênia",
+      "cidade": "Nairóbi",
+      "categoria": "Aventura",
+      "descricao": "Safari fotográfico com guia local e hospedagem em lodges.",
+      "imagemUrl": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      "precoPorPessoa": 4700,
+      "duracaoDias": 5,
+      "avaliacao": 4.7,
+      "tag": "Aventura"
+    },
+    {
+      "id": "5",
+      "titulo": "Machu Picchu",
+      "pais": "Peru",
+      "cidade": "Cusco",
+      "categoria": "Cultural",
+      "descricao": "Viagem com foco em história Inca e trilhas leves.",
+      "imagemUrl": "https://images.pexels.com/photos/259967/pexels-photo-259967.jpeg",
+      "precoPorPessoa": 4800,
+      "duracaoDias": 4,
+      "avaliacao": 4.8,
+      "tag": "Cultural"
+    },
+    {
+      "id": "6",
+      "titulo": "Tóquio Moderna",
+      "pais": "Japão",
+      "cidade": "Tóquio",
+      "categoria": "Cidade",
+      "descricao": "Tecnologia, cultura pop e gastronomia japonesa em uma só viagem.",
+      "imagemUrl": "https://images.pexels.com/photos/3861964/pexels-photo-3861964.jpeg",
+      "precoPorPessoa": 7900,
+      "duracaoDias": 8,
+      "avaliacao": 4.9,
+      "tag": "Cidade"
+    }
+  ],
+  "reservas": [
+    {
+      "id": "1",
+      "tripId": 1,
+      "destination": "Ilhas Maldivas Paradise",
+      "country": "Maldivas",
+      "imageUrl": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      "startDate": "2025-12-15",
+      "endDate": "2025-12-22",
+      "travelers": 2,
+      "totalPrice": 17340,
+      "status": "Confirmada",
+      "userId": 1,
+      "createdAt": "2025-10-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "tripId": 3,
+      "destination": "Paris Romântica",
+      "country": "França",
+      "imageUrl": "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg",
+      "startDate": "2025-01-10",
+      "endDate": "2025-01-17",
+      "travelers": 2,
+      "totalPrice": 10800,
+      "status": "Confirmada",
+      "userId": 1,
+      "createdAt": "2025-09-25T14:30:00Z"
+    },
+    {
+      "id": "3",
+      "tripId": 5,
+      "destination": "Machu Picchu",
+      "country": "Peru",
+      "imageUrl": "https://images.pexels.com/photos/259967/pexels-photo-259967.jpeg",
+      "startDate": "2024-05-10",
+      "endDate": "2024-05-14",
+      "travelers": 1,
+      "totalPrice": 4800,
+      "status": "Confirmada",
+      "userId": 1,
+      "createdAt": "2024-02-01T09:15:00Z"
+    },
+    {
+      "id": "4",
+      "tripId": 4,
+      "destination": "Safari na África",
+      "country": "Quênia",
+      "imageUrl": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      "startDate": "2024-03-02",
+      "endDate": "2024-03-07",
+      "travelers": 3,
+      "totalPrice": 14100,
+      "status": "Cancelada",
+      "userId": 1,
+      "createdAt": "2023-12-10T11:00:00Z"
+    },
+    {
+      "id": "c5e6",
+      "tripId": 4,
+      "destination": "Safari na África",
+      "country": "Quênia",
+      "imageUrl": "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      "startDate": "2026-01-21",
+      "endDate": "2026-02-18",
+      "travelers": 1,
+      "totalPrice": 4700,
+      "status": "Confirmada",
+      "userId": 1,
+      "createdAt": "2025-11-24T00:33:38.240Z"
+    }
+  ]
+}
